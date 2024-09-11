@@ -4,7 +4,7 @@ html{
     height: 1800px;
     flex-shrink: 0;
     background: linear-gradient(0deg, #2D0320 0%, #2D0320 100%);
-
+    
     
 }
 
@@ -30,8 +30,8 @@ body{
 
 #Eyeball{
     position: fixed;
-    top: 28%;
-    right: 13%;
+    top: 27.5%;
+    right: 110px;
     height: 35%;
     flex-shrink: 0;
     z-index: 2;
@@ -40,7 +40,7 @@ body{
 #Speech{
     position: fixed;
     top: 10%;
-    right: 40%;
+    right: 290px;
     height: 30%;
     flex-shrink: 0;
     z-index: 3;
@@ -50,8 +50,10 @@ body{
 #CrystalBall{
     position: fixed;
     top: 30%;
-    right: 10%;
+    right: 90px;
     height: 30%;
     flex-shrink: 0;
     z-index: 1;
+    cursor: pointer;
+    
 }
