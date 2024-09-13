@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('fortuneteller.js');
 
 html{
     width: 100%;
@@ -18,27 +20,17 @@ body{
 
 }
 
-#table{
-
-    position: fixed;
-    top: 10%;
-    right: 10%;
-    height: 30%;
-    flex-shrink: 0;
-    
-}
-
 #Eyeball{
-    position: fixed;
+    position: absolute;
     top: 27.5%;
     right: 110px;
     height: 35%;
     flex-shrink: 0;
-    z-index: 2;
+    z-index: 3;
 }
 
 #Speech{
-    position: fixed;
+    position: absolute;
     top: 10%;
     right: 290px;
     height: 30%;
@@ -48,12 +40,59 @@ body{
 }
 
 #CrystalBall{
-    position: fixed;
+    position: absolute;
     top: 30%;
     right: 90px;
     height: 30%;
     flex-shrink: 0;
-    z-index: 1;
+    z-index: 2;
     cursor: pointer;
     
+}
+
+#Table{
+    position: absolute;
+    top: 50%;
+    right: 70px;
+    height: 40%;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+#rectangle{
+
+    width: 80%;
+    /*height: 1000px;*/
+    border-radius: 45px;
+    background: rgba(45, 3, 32, 0.55);
+    position: absolute;
+    top: 70%;
+    right: 10%;
+    z-index: 0;
+
+
+}
+
+.image-grid {
+    --gap: 10px;
+    --num-colls: 3;
+    --row-height: 200px;
+
+    padding: var(--gap);
+    display: grid;
+    
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: var(--row-height);
+    grid-gap: var(--gap);
+    justify-content: center;
+
+}
+
+.image-grid > img{
+    width: 200px;
+    height: 200px;
+    object-fit: auto;
+    border-radius: 45px;
+    box-shadow: 0 0 10px rgba(45, 5, 47, 0.5);
+    transition: 0.2s;
 }
