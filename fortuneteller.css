@@ -27,16 +27,7 @@ body{
     height: 35%;
     flex-shrink: 0;
     z-index: 3;
-}
-
-#Speech{
-    position: absolute;
-    top: 10%;
-    right: 290px;
-    height: 30%;
-    flex-shrink: 0;
-    z-index: 3;
-    rotate: -13deg;
+    cursor: pointer;
 }
 
 #CrystalBall{
@@ -44,7 +35,7 @@ body{
     top: 30%;
     right: 90px;
     height: 30%;
-    flex-shrink: 0;
+   
     z-index: 2;
     cursor: pointer;
     

@@ -1,16 +1,90 @@
 // Get references to the first and second image elements
-let CrystalBall = select('#CrystalBall');
-let SpeachBubble = select('#Speech');
+let CrystalBall;
+let SpeachBubble;
+let Eye;
+let messages = [
+    "Your fate is not always set in stone. I should know as I'm made of crystal.",
+    "AI The future is uncertain, but your path is clear.",
+    "AI Trust in yourself and the answers will come.",
+    "AI A great opportunity is on the horizon.",
+    "AI Change is coming, embrace it with open arms."
+];
+let currentMessage = "";
+
+let showMessage = false;
+
+let opac = 0; // Opacity of the image
+
+function preload(){
+
+    SpeachBubble = loadImage('images/SpeachBubble.png');
+
+}
+
+function setup() {
+
+    createCanvas(window.innerWidth, window.innerHeight);
+
+    background(220, 0);    
+
+    CrystalBall = select('#CrystalBall');
+    Eye = select('#Eyeball');
+    
+    Eye.mousePressed(fadeInImage);
+    console.log('showMessage:', showMessage);
+
+
+
+}
+
+function draw(){
+
+    if (showMessage) {
+        //SpeachBubble.style('display', 'block');
+        showImage();
+        
+    } else {
+        //SpeachBubble.style('display', 'none');
+
+    }
+
+
+
+}
 
 function fadeInImage() {
-    SpeachBubble.style.zIndex = '4';
-    SpeachBubble.style.opacity = '0';
 
-    // Add a click event listener to the first image element
-    CrystalBall.addEventListener('click', () => {
-        // Fade in the #Speech element
-        SpeachBubble.style.opacity = '1';
-    });
+    showMessage = true;
+
+    currentMessage = random(messages);
+
+}
+
+function showImage() {
+    
+    // Change the opacity of the image
+    if(showMessage){
+        SpeachBubble.resize(width*0.5, 0);
+        tint(255, 15);
+        image(SpeachBubble, 90, 0); //x y
+        // console.log('showMessage:', showMessage);
+
+        fill(0); // Text color (black)
+        textSize(32); // Text size
+        textAlign(LEFT, TOP); // Center align text
+        textWrap(WORD); // Enable word wrapping
+
+        // Calculate the text box width and position
+        let textBoxWidth = SpeachBubble.width - 20; // Adjust for padding
+        let textX = 100; // Adjust for padding
+        let textY = 10; // Adjust for padding
+
+        // Display text over the SpeachBubble image
+        text(currentMessage, textX, textY, textBoxWidth);
+    }
+    
+
+    
 }
 
 // function drawHoroRectangle() {
@@ -26,16 +100,13 @@ function fadeInImage() {
 //     rectangle.style.zIndex = '0';
 // }
 
-drawHoroRectangle();
-fadeInImage();
+// function SetUp() {
+//     let ButtonTest = select('#ButtonTest');
+//     ButtonTest.mousePressed(showImage);
 
-function SetUp() {
-    let ButtonTest = select('#ButtonTest');
-    ButtonTest.mousePressed(showImage);
+//     let Speech = select('#Speech');
 
-    let Speech = select('#Speech');
-
-}
+// }
 
 // function setup() {
 //     // Add your setup code here
