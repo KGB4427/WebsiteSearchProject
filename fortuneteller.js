@@ -7,7 +7,8 @@ let messages = [
     "AI The future is uncertain, but your path is clear.",
     "AI Trust in yourself and the answers will come.",
     "AI A great opportunity is on the horizon.",
-    "AI Change is coming, embrace it with open arms."
+    "AI Change is coming, embrace it with open arms.",
+    "A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A" // Text text length
 ];
 let currentMessage = "";
 
@@ -61,26 +62,38 @@ function fadeInImage() {
 }
 
 function showImage() {
+
+    // Fixed size for the SpeachBubble
+    let speachBubbleWidth = 300; // Fixed width
+    let speachBubbleHeight = 150; // Fixed height
+
+    // Position the SpeachBubble on the right side of the canvas
+    let speachBubbleX = width - speachBubbleWidth - 20; // 20 pixels from the right edge
+    let speachBubbleY = height / 2 - speachBubbleHeight / 2; // Centered vertically
+
+    // Calculate the text box width and position
+    let textBoxWidth = speachBubbleWidth - 30; // Adjust for padding
+    let textBoxHeight = speachBubbleHeight - 20; // Adjust for padding
+    let textX = speachBubbleX + 15; // Adjust for padding
+    let textY = speachBubbleY + 15; // Adjust for padding
     
     // Change the opacity of the image
     if(showMessage){
         SpeachBubble.resize(width*0.5, 0);
         tint(255, 15);
-        image(SpeachBubble, 90, 0); //x y
+        image(SpeachBubble, speachBubbleX, speachBubbleY, speachBubbleWidth, speachBubbleHeight); //x y
         // console.log('showMessage:', showMessage);
 
+        // Set the text properties
+        textFont('Comic Sans'); // Font type
         fill(0); // Text color (black)
-        textSize(32); // Text size
+        textSize(24); // Text size
         textAlign(LEFT, TOP); // Center align text
         textWrap(WORD); // Enable word wrapping
 
-        // Calculate the text box width and position
-        let textBoxWidth = SpeachBubble.width - 20; // Adjust for padding
-        let textX = 100; // Adjust for padding
-        let textY = 10; // Adjust for padding
 
         // Display text over the SpeachBubble image
-        text(currentMessage, textX, textY, textBoxWidth);
+        text(currentMessage, textX, textY, textBoxWidth, textBoxHeight);
     }
     
 
