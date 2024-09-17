@@ -88,7 +88,6 @@ function draw(){
 function fadeInImage() {
 
     showMessage = true;
-
     currentMessage = random(messages);
     showTextBox();
 
@@ -101,8 +100,8 @@ function showImage() {
     let speachBubbleHeight = 300; // Fixed height
 
     // Position the SpeachBubble on the right side of the canvas
-    let speachBubbleX = speachBubbleWidth + 120; // pixels from the left edge
-    let speachBubbleY = speachBubbleHeight / 4; // Centered vertically
+    let speachBubbleX = 380; // pixels from the left edge
+    let speachBubbleY = 150; // Centered vertically
 
     // Calculate the text box width and position
     let textBoxWidth = speachBubbleWidth - 30; // Adjust for padding

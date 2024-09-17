@@ -22,24 +22,40 @@ body{
 
 #Eyeball{
     position: absolute;
-    top: 7.5%;
-    left: 110px;
-    height: 35%;
+    top: 75px;
+    left: 105px;
+    height: 250px;
     flex-shrink: 0;
+
     z-index: 3;
-    transform: scaleX(-1);
-    rotate: -20deg;
+    background-size: cover; /* Ensure the background image covers the element */
 
     cursor: pointer;
 }
 
-#CrystalBall{
+/* #EyeballContainer {
     position: absolute;
     top: 10%;
-    left: 90px;
-    height: 30%;
-    transform: scaleX(-1);
-   
+    left: 110px;
+    height: 200px;
+    width: 200px; /* Set a fixed width *
+    /* animation: changeEyeballImage 9s infinite, float 3s infinite; /* Apply the animation *
+    z-index: 4; /* Ensure the container is on top *
+}
+
+#Eyeball {
+    opacity: 0; /* Hide the static eyeball image *
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+} */
+
+#CrystalBall{
+    position: absolute;
+    top: 80px;
+    left: 130px;
+    height: 215px;
+
     z-index: 2;
     cursor: pointer;
     
@@ -47,12 +63,12 @@ body{
 
 #Table{
     position: absolute;
-    top: 30%;
-    left: 70px;
-    height: 40%;
+    top: 230px;
+    left: 60px;
+    height: 250px;
     flex-shrink: 0;
     z-index: 1;
-    transform: scaleX(-1);
+
 }
 
 #rectangle{
@@ -111,8 +127,43 @@ body{
 
 .Horoscope:hover {
     background-color: #ffe51d;
+    scale: 1.05;
 }
 
 .Horoscope:active {
     background-color: #7a6e1a;
+    scale: 1;
+}
+
+/* New styles for floating effect */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for changing Eyeball image *
+@keyframes changeEyeballImage {
+    0% {
+        background-image: url('images/Eyeball.png');
+    }
+    2% {
+        background-image: url('images/Eyeball1.png');
+    }
+    4% {
+        background-image: url('images/Eyeball.png');
+    }
+    100% {
+        background-image: url('images/Eyeball.png');
+    } 
+} */
+
+.Teller {
+    animation: float 3s infinite;
 }
