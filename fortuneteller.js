@@ -5,29 +5,38 @@ let Eye;
 let Horoscope;
 let HoroscopeImages = []; // Array to hold horoscope images
 let Aries;
-let AriesArray = ["An Aries I see. You'll have great fortune... In a large create of goat milk.", 
+let AriesArray = ["An Aries I see. You'll have great fortune... In a large like crate of goat milk.", 
                   "If you see a mermaid in the river. Avoid them! They want your One Piece collection!",
                   "I heard that if an Aries spins in their chair super fast, they'll be sent to the 4th dimension. Or throw up. I forget which."];
 let Taurus;
-let TaurusArray = ["Im a taurus", "What's up"];
+let TaurusArray = ["The stars predict tomorrow you'll wake up, do a bunch of stuff, and then go back to sleep.", 
+                   "Avoid eating that 2 month old salad. Like it will make you feel bloated... among other things.",
+                   "Your evil inator that turns cars into toy cars so you can park will be thworted by a platypus in a dashing hat."];
 let Gemini;
-let GeminiArray = ["Im a gemini", "What's up"];
+let GeminiArray = ["Gemini's should NEVER spend more than 2 hours and 34 minutes in the sun, lest they turn into a bagel.", 
+                   "What's up",
+                   ""];
 let Cancer;
-let CancerArray = ["Im a cancer", "What's up"];
+let CancerArray = ["Im a cancer", 
+                   "What's up"];
 let Leo;
-let LeoArray = ["Im a leo", "What's up"];
+let LeoArray = ["Im a leo", 
+                "What's up"];
 let Virgo;
-let VirgoArray = ["Im a virgo", "What's up"];
+let VirgoArray = ["Im a virgo", 
+                  "What's up"];
 let Libra;
-let LibraArray = ["Im a libra", "What's up"];
+let LibraArray = ["Im a libra", 
+                  "What's up"];
 let Scorpio;
-let ScorpioArray = ["Im a scorpio", "What's up"];
+let ScorpioArray = ["Im a scorpio", 
+                    "What's up"];
 let messages = [
-    "Your fate is not always set in stone. I should know as I'm made of crystal.",
-    "AI The future is uncertain, but your path is clear.",
-    "AI Trust in yourself and the answers will come.",
-    "AI A great opportunity is on the horizon.",
-    "AI Change is coming, embrace it with open arms.",
+    "Your fate is not always set in stone. I should know like I'm made of crystal.",
+    "You're lucky #s are:\n1  2  3  4  5.\nWait, something doesn't seem right.",
+    "On September 24th, expect someone to wear a mushroom hat. They're a real fungi. Get it?\nYeah, It's not as funny the 1000th time.",
+    "🎵Come on grab your friends~🎵\n🎵We'll go to very distand lands~🎵\nHuh? Sorry, what was I saying?",
+    "Like um, Use as many uh filler words as you can. It's like totally cool, you know? Don't let anyone tell you otherwise.",
     "A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A" // Text text length
 ];
 let currentMessage = "";
@@ -59,11 +68,22 @@ function setup() {
     Aries = select('#Aries');
     Taurus = select('#Taurus');
     Gemini = select('#Gemini');
+    Cancer = select('#Cancer');
+    Leo = select('#Leo');
+    Virgo = select('#Virgo');
+    Libra = select('#Libra');
+    Scorpio = select('#Scorpio');
     
     Eye.mousePressed(fadeInImage);
     Aries.mousePressed(displayAriesMessage);
     Taurus.mousePressed(displayTaurusMessage);
     Gemini.mousePressed(displayGeminiMessage);
+    Cancer.mousePressed(displayCancerMessage);
+    Leo.mousePressed(displayLeoMessage);
+    Virgo.mousePressed(displayVirgoMessage);
+    Libra.mousePressed(displayLibraMessage);
+    Scorpio.mousePressed(displayScorpioMessage);
+
     console.log('showMessage:', showMessage);
 
 
@@ -170,6 +190,36 @@ function displayTaurusMessage() {
 function displayGeminiMessage() {
     showMessage = true;
     currentMessage = random(GeminiArray); // Select a random message from the GeminiArray
+    showTextBox();
+}
+
+function displayCancerMessage() {
+    showMessage = true;
+    currentMessage = random(CancerArray); // Select a random message from the CancerArray
+    showTextBox();
+}
+
+function displayLeoMessage() {
+    showMessage = true;
+    currentMessage = random(LeoArray); // Select a random message from the LeoArray
+    showTextBox();
+}
+
+function displayVirgoMessage() {
+    showMessage = true;
+    currentMessage = random(VirgoArray); // Select a random message from the VirgoArray
+    showTextBox();
+}
+
+function displayLibraMessage() {
+    showMessage = true;
+    currentMessage = random(LibraArray); // Select a random message from the LibraArray
+    showTextBox();
+}
+
+function displayScorpioMessage() {
+    showMessage = true;
+    currentMessage = random(ScorpioArray); // Select a random message from the ScorpioArray
     showTextBox();
 }
 
